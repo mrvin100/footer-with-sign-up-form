@@ -1,0 +1,275 @@
+/* custom css file build by JeanDoe */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap");
+
+/*variables*/
+
+:root{
+	--white: #fff;
+	--black: #000;
+	--main-clr: brown;
+}
+
+/*initialisation*/
+
+*{
+	font-family: 'Poppins', 'Roboto', sans-serif;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	outline: none;
+	border: none;
+	text-decoration: none;
+}
+
+html{
+/*	font-size: 90%;*/
+	overflow-x: hidden;
+	scroll-behavior: smooth;
+	scroll-padding-top: 2rem;
+}
+
+html::-webkit-scrollbar{
+	width: .3rem;
+}
+
+html::-webkit-scrollbar-track{
+	background: var(--white);
+}
+
+html::-webkit-scrollbar-thumb{
+	background: var(--black);
+}
+
+section{
+	padding: 2rem 4%;
+}
+
+.btn{
+	display: inline-block;
+	padding: .75rem 2rem;
+	font-size: 1rem;
+	color: var(--white);
+	background: var(--black);
+	border: .15rem solid var(--black);
+	cursor: pointer;
+	font-weight: bolder;
+	border-radius: .35rem;
+	text-transform: capitalize;
+	letter-spacing: 1px;
+}
+
+.btn:hover{
+	background: none;
+	color: var(--black);
+}
+
+.header{
+	position: sticky;
+	top: 0; left: 0; right: 0;
+	z-index: 100;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: var(--white);
+	box-shadow: 0 0 .15rem .3rem rgba(0,0,0,.1);
+	padding: .5rem 6%;
+}
+
+.header .logo{
+	font-size: 1.3rem;
+	color: var(--black);
+	letter-spacing: 1px;
+}
+
+.header .logo i{
+	color: var(--main-clr);
+	margin-right: .5rem;
+}
+.header .logo span{
+	color:var(--main-clr);
+}
+
+.header .navbar a{
+	margin: 0 1rem;
+	font-size: 1rem;
+	color: var(--black);
+	letter-spacing: 1px;
+	text-transform: capitalize;
+	font-weight: 600;
+}
+
+.header .navbar a:hover{
+	text-decoration: underline;
+	color: var(--main-clr);
+}
+
+#menu-btn{
+	cursor: pointer;
+	font-size: 2rem;
+	display: none;
+}
+
+
+/*newslwtter section*/
+
+.newsletter .content{
+	text-align: center;
+	max-width: 40rem;
+	margin: .75rem auto;
+}
+
+.newsletter .content h3{
+	font-size: 2rem;
+	margin-bottom: .75rem;
+}
+
+.newsletter .content p{
+	padding: .75rem 0;
+	line-height: 1.7;
+	font-size: 1.1rem;
+}
+
+.newsletter .content p a{
+	color: #888;
+}
+
+.newsletter .content p a:hover{
+	text-decoration: underline;
+	color: var(--main-clr);
+}
+
+.newsletter .content form{
+	display: flex;
+	border: .1rem solid var(--black);
+	border-radius: .35rem;
+	padding: .5rem;
+	margin: .75rem 0;
+}
+
+.newsletter .content form .email{
+	width: 100%;
+	padding: 1rem 1.4rem;
+	font-size: 1.3rem;
+	text-transform: none;
+}
+
+/*footer section*/
+
+.footer{
+	background: #f6e4d5;
+	margin: 0 auto;
+}
+
+.footer .box-container{
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+	justify-content: center;
+	gap: 1rem;
+}
+
+.footer .box-container .box h3{
+	font-size: 1.3rem;
+	padding: .5rem 0;
+	text-transform: capitalize;
+}
+
+.footer .box-container .box a{
+	font-size: .9rem;
+	color: var(--black);
+	padding: .5rem 0;
+	text-transform: capitalize;
+	display: list-item;
+	list-style-type:lower-greek;
+	list-style-position: inside;
+	padding-left: .8rem;
+}
+
+.footer .box-container .box a:hover{
+	text-decoration: underline;
+	color: var(--main-clr);
+}
+
+.footer .box-container .box:last-child a{
+	display: block;
+}
+
+
+.footer .box-container .box:last-child a i{
+	margin-right: .5rem;
+}
+
+.footer .credit{
+	text-align: center;
+	padding: .75rem;	
+	margin-top: .75rem;
+	font-size: .90rem;
+	color: var(--black);
+	letter-spacing: 1px;
+}
+
+.footer .credit span{
+	color: var(--main-clr);
+}
+
+@media (max-width: 1200px){
+	.header{
+		padding: 1rem;
+	}
+	section{
+		padding: 1.5rem 1rem;
+	}
+}
+
+@media (max-width: 991px){
+	html{
+		font-size: 95%;
+	}
+}
+
+
+@media (max-width: 768px){
+	#menu-btn{
+		display: inline-block;
+		transition: .2s linear;
+	}
+	#menu-btn.fa-times{
+		transform: rotate(180deg);
+	}
+	.header .btn{
+		display: none;
+	}
+	.header .navbar{
+		position: absolute;
+		top: 99%; left: 0; right: 0;
+		border-top: .1rem solid var(--black);
+		background: var(--white);
+		transition: .2s linear;
+		clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+	}
+	.header .navbar.active{
+		clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+	}
+	.header .navbar a{
+		display: block;
+		margin: 0;
+		padding: 1rem 1.5rem;
+	}
+	
+}
+
+@media (max-width: 450px){
+	html{
+		font-size: 90%;
+	}
+}
+
+
+
+
+
+
+
+
+
+
